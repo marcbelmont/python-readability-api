@@ -4,8 +4,9 @@
 readability.auth
 ~~~~~~~~~~~~~~~~
 
-This module provides the xauth functionality for the Readability
-HTTP API.
+This module provides the auth functionality for the Readability HTTP API.
+Currently, the only method supported is xauth. For the standard OAuth flow,
+please see libraries such as oauth2 or oauthlib.
 
 """
 
@@ -22,14 +23,14 @@ ACCESS_TOKEN_URL = 'oauth/access_token/'
 
 def xauth(consumer_key, consumer_secret, username, password,
     base_url_template=DEFAULT_BASE_URL_TEMPLATE):
-    """Returns an OAuth token that can be used with clients.ReaderClient.
+    """
+    Returns an OAuth token that can be used with clients.ReaderClient.
 
     :param consumer_key:  Readability consumer key
     :param consumer_secret: Readability consumer secret
     :param username: A username
     :param password: A password
     :param base_url_template: Template for generating Readability API urls.
-
     """
     # fetch oauth token from server
     consumer = oauth2.Consumer(consumer_key, consumer_secret)

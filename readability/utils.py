@@ -44,11 +44,11 @@ filter_type_map = {
 
 
 def cast_datetime_filter(value):
-    """Cast a datetime filter value.
+    """
+    Cast a datetime filter value.
 
     :param value: string representation of a value that needs to be casted to
         a `datetime` object.
-
     """
     if isinstance(value, basestring):
         dtime = parse_datetime(value)
@@ -62,7 +62,8 @@ def cast_datetime_filter(value):
 
 
 def cast_integer_filter(value):
-    """Cast an integer filter value.
+    """
+    Cast an integer filter value.
 
     Theses are usually booleans in Python but they need to be sent as
     1s and 0s to the API.
@@ -73,11 +74,11 @@ def cast_integer_filter(value):
 
 
 def filter_args_to_dict(filter_dict, accepted_filter_keys=[]):
-    """Cast and validate filter args.
+    """
+    Cast and validate filter args.
 
     :param filter_dict: Filter kwargs
     :param accepted_filter_keys: List of keys that are acceptable to use.
-
     """
     out_dict = {}
     for k, v in filter_dict.items():
