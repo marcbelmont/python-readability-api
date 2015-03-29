@@ -9,7 +9,6 @@ import sys
 from setuptools import setup
 
 
-
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
@@ -24,7 +23,7 @@ setup(
     author='The Readability Team',
     author_email='feedback@readability.com',
     url='https://www.readability.com/publishers/api',
-    packages= ['readability'],
+    packages=['readability_api'],
     install_requires=required,
     license='MIT',
     classifiers=(
